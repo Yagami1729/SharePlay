@@ -20,10 +20,10 @@ public class Question {
         self.correctOption = options[0]
     }
     
-    public init(title: String, options: [Option], correct: Option) {
+    public init(title: String, options: [Option], correct index: Int) {
         self.title = title
         self.options = options
-        self.correctOption = correct
+        self.correctOption = options[index]
     }
 }
 
