@@ -23,24 +23,26 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 40) {
+            Spacer()
             ShareLink(item: URL(string: "https://apple.com")!) {
                 Text("Share Link")
             }
+            
             Button("Activate") {
                 activateSession()
             }
+    
             Button("Join") {
                 joinSession()
             }
-            Button("Fetch Messages") {
-                fetchMessages()
-            }
+            .disabled(model.messenger != nil)
             
             TextField("Message", text: $message)
                 .padding()
             Button("Send") {
                 sendMessage()
             }
+            
             List {
                 ForEach(messagesHistory) { message in
                     let timestamp = dateFormatter.string(from: message.timestamp)
@@ -57,6 +59,7 @@ private extension ContentView {
         dateFormatter.dateFormat = "M/d/y h:mm a"
         return dateFormatter
     }
+    
     func activateSession() {
         Task {
             do {
@@ -66,6 +69,7 @@ private extension ContentView {
             }
         }
     }
+    
     func joinSession() {
         Task {
             for await session in PlayTogether.sessions() {
@@ -81,17 +85,7 @@ private extension ContentView {
             }
         }
     }
-    func fetchMessages() {
-        Task {
-            for await (message, context) in model.messenger!.messages(of: GameMessage.self) {
-                Task { @MainActor in
-                    messagesHistory.append(message)
-                }
-                logger.debug("Message: \(message.text)")
-                logger.debug("Context: \(context.source)")
-            }
-        }
-    }
+    
     func sendMessage() {
         let gameMessage = GameMessage(id: UUID(), text: message, timestamp: Date())
         model.messenger?.send(gameMessage, completion: { error in
