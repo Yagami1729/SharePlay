@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031645C32A3568A4004B5DAA /* QuestionPollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645C22A3568A4004B5DAA /* QuestionPollView.swift */; };
+		031645C52A356C5C004B5DAA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645C42A356C5C004B5DAA /* TimerView.swift */; };
+		031645C72A356E84004B5DAA /* QuizConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645C62A356E84004B5DAA /* QuizConfigurationView.swift */; };
+		031645C92A357797004B5DAA /* QuizConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645C82A357797004B5DAA /* QuizConfiguration.swift */; };
+		031645CB2A358700004B5DAA /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645CA2A358700004B5DAA /* Questions.swift */; };
+		031645CD2A358869004B5DAA /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645CC2A358869004B5DAA /* ScoreboardView.swift */; };
+		031645CF2A358C0A004B5DAA /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645CE2A358C0A004B5DAA /* Answer.swift */; };
+		031645D22A3591E2004B5DAA /* Collection+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645D12A3591E2004B5DAA /* Collection+SafeIndex.swift */; };
+		031645D42A359405004B5DAA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031645D32A359405004B5DAA /* RootView.swift */; };
 		038876252A35023E001A872B /* SharePlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038876242A35023E001A872B /* SharePlayApp.swift */; };
 		038876272A35023E001A872B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038876262A35023E001A872B /* ContentView.swift */; };
 		038876292A35023E001A872B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038876282A35023E001A872B /* Assets.xcassets */; };
@@ -17,6 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031645C22A3568A4004B5DAA /* QuestionPollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPollView.swift; sourceTree = "<group>"; };
+		031645C42A356C5C004B5DAA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		031645C62A356E84004B5DAA /* QuizConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfigurationView.swift; sourceTree = "<group>"; };
+		031645C82A357797004B5DAA /* QuizConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfiguration.swift; sourceTree = "<group>"; };
+		031645CA2A358700004B5DAA /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		031645CC2A358869004B5DAA /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		031645CE2A358C0A004B5DAA /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		031645D12A3591E2004B5DAA /* Collection+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeIndex.swift"; sourceTree = "<group>"; };
+		031645D32A359405004B5DAA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		038876212A35023E001A872B /* SharePlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharePlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		038876242A35023E001A872B /* SharePlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlayApp.swift; sourceTree = "<group>"; };
 		038876262A35023E001A872B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031645D02A3591D4004B5DAA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				031645D12A3591E2004B5DAA /* Collection+SafeIndex.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		038876182A35023E001A872B = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +88,13 @@
 				667EF0EA2A350BA400B6EFF4 /* GroupActivity */,
 				038876242A35023E001A872B /* SharePlayApp.swift */,
 				038876262A35023E001A872B /* ContentView.swift */,
+				031645D32A359405004B5DAA /* RootView.swift */,
 				0394B8E32A355B8F00DD3BDE /* QuestionFormView.swift */,
+				031645C22A3568A4004B5DAA /* QuestionPollView.swift */,
+				031645C42A356C5C004B5DAA /* TimerView.swift */,
+				031645C62A356E84004B5DAA /* QuizConfigurationView.swift */,
+				031645CC2A358869004B5DAA /* ScoreboardView.swift */,
+				031645D02A3591D4004B5DAA /* Utilities */,
 				038876282A35023E001A872B /* Assets.xcassets */,
 				0388762A2A35023E001A872B /* Preview Content */,
 				667EF0EE2A35491100B6EFF4 /* SharePlayModel.swift */,
@@ -81,7 +113,10 @@
 		667EF0EA2A350BA400B6EFF4 /* GroupActivity */ = {
 			isa = PBXGroup;
 			children = (
+				031645C82A357797004B5DAA /* QuizConfiguration.swift */,
 				667EF0EB2A350BD000B6EFF4 /* PlayTogether.swift */,
+				031645CA2A358700004B5DAA /* Questions.swift */,
+				031645CE2A358C0A004B5DAA /* Answer.swift */,
 			);
 			path = GroupActivity;
 			sourceTree = "<group>";
@@ -156,10 +191,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031645C52A356C5C004B5DAA /* TimerView.swift in Sources */,
+				031645D42A359405004B5DAA /* RootView.swift in Sources */,
 				0394B8E42A355B8F00DD3BDE /* QuestionFormView.swift in Sources */,
+				031645C72A356E84004B5DAA /* QuizConfigurationView.swift in Sources */,
+				031645D22A3591E2004B5DAA /* Collection+SafeIndex.swift in Sources */,
+				031645CF2A358C0A004B5DAA /* Answer.swift in Sources */,
+				031645CB2A358700004B5DAA /* Questions.swift in Sources */,
+				031645C32A3568A4004B5DAA /* QuestionPollView.swift in Sources */,
 				038876272A35023E001A872B /* ContentView.swift in Sources */,
 				667EF0EF2A35491100B6EFF4 /* SharePlayModel.swift in Sources */,
 				667EF0EC2A350BD000B6EFF4 /* PlayTogether.swift in Sources */,
+				031645C92A357797004B5DAA /* QuizConfiguration.swift in Sources */,
+				031645CD2A358869004B5DAA /* ScoreboardView.swift in Sources */,
 				038876252A35023E001A872B /* SharePlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SharePlayApp: App {
+    var model: SharePlayModel = .init()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                RootView(model: model)
+            }
+            .environment(model)
         }
     }
 }

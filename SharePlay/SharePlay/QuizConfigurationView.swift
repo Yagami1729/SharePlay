@@ -10,6 +10,8 @@ import Observation
 
 struct QuizConfigurationView: View {
     @Binding var configuration: QuizConfiguration
+    @Environment(SharePlayModel.self) var model
+    
     var questionLimitRange: ClosedRange<Int> = 1...10
     var timeLimitRange: ClosedRange<Int> = 1...10
     
@@ -36,13 +38,20 @@ struct QuizConfigurationView: View {
         }
         .safeAreaPadding(.init(top: 16, leading: 16, bottom: 16, trailing: 16))
         .safeAreaInset(edge: .bottom) {
-            ShareLink(
-                item: session,
-                subject: Text("Come on, have an awesome fun quiz!"),
-                preview: SharePreview(Text("Share~Play"), icon: Image(systemName: "lightbulb.max.fill")))
-            .labelStyle(.titleAndIcon)
-            .imageScale(.large)
-            .symbolVariant(.fill)
+            HStack {
+                Button {
+                    
+                } label: {
+                    Text("Start")
+                }
+                ShareLink(
+                    item: session,
+                    subject: Text("Come on, have an awesome fun quiz!"),
+                    preview: SharePreview(Text("Share~Play"), icon: Image(systemName: "lightbulb.max.fill")))
+                .labelStyle(.titleAndIcon)
+                .imageScale(.large)
+                .symbolVariant(.fill)
+            }
             .buttonStyle(.borderedProminent)
             .disabled(configuration.hostUser.isEmpty)
         }

@@ -41,7 +41,7 @@ struct RootView: View {
             NavigationLink {
                 QuizConfigurationView(configuration: $model.configuration)
             } label: {
-                Text("Start")
+                Text("Configure")
             }
             .buttonStyle(.borderedProminent)
             .disabled(model.configuration.hostUser.isEmpty)
