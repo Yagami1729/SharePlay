@@ -40,7 +40,7 @@ struct QuizConfigurationView: View {
         .safeAreaInset(edge: .bottom) {
             HStack {
                 Button {
-                    
+                    model.activateSession()
                 } label: {
                     Text("Start")
                 }
@@ -53,7 +53,7 @@ struct QuizConfigurationView: View {
                 .symbolVariant(.fill)
             }
             .buttonStyle(.borderedProminent)
-            .disabled(configuration.hostUser.isEmpty)
+            .disabled(configuration.hostUser.name.isEmpty)
         }
         .navigationTitle("Configure Quiz")
     }
@@ -61,6 +61,6 @@ struct QuizConfigurationView: View {
 
 #Preview {
     NavigationStack {
-        QuizConfigurationView(configuration: .constant(QuizConfiguration(hostUser: "James")))
+        QuizConfigurationView(configuration: .constant(QuizConfiguration(hostUser: .init(name:"James"))))
     }
 }

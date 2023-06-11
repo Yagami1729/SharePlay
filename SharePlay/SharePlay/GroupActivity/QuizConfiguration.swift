@@ -17,9 +17,9 @@ struct QuizConfiguration: Codable {
     var timeLimit: Int = 4
     
     /// Name of the user that will host and configure the quiz session
-    var hostUser: String = ""
+    var hostUser: User = User(name: "")
     
-    init(totalQuestions: Int = 1, timeLimit: Int = 4, hostUser: String = "") {
+    init(totalQuestions: Int = 1, timeLimit: Int = 4, hostUser: User = .init(name: "")) {
         self.totalQuestions = totalQuestions
         self.timeLimit = timeLimit
         self.hostUser = hostUser

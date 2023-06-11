@@ -29,7 +29,7 @@ struct RootView: View {
                 .bold()
             Spacer()
             
-            TextField("Host name", text: $model.configuration.hostUser)
+            TextField("Host name", text: $model.configuration.hostUser.name)
                 .padding(.horizontal, 26)
                 .padding(.vertical)
                 .background {
@@ -44,10 +44,13 @@ struct RootView: View {
                 Text("Configure")
             }
             .buttonStyle(.borderedProminent)
-            .disabled(model.configuration.hostUser.isEmpty)
+            .disabled(model.configuration.hostUser.name.isEmpty)
             Spacer()
         }
         .fontDesign(.rounded)
+        .onAppear {
+            model.listenForSessions()
+        }
     }
 }
 
