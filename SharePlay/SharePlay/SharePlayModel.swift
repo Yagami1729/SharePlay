@@ -13,4 +13,6 @@ import OSLog
 @Observable
 class SharePlayModel {
     var messenger: GroupSessionMessenger? = nil
+    var configuration: QuizConfiguration = .init()
+    let logger = Logger(subsystem: "SharePlay", category: "Logic")
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import Observation
 
 struct QuizConfigurationView: View {
-    @State var configuration: QuizConfiguration
+    @Binding var configuration: QuizConfiguration
     var questionLimitRange: ClosedRange<Int> = 1...10
     var timeLimitRange: ClosedRange<Int> = 1...10
     
@@ -19,12 +19,6 @@ struct QuizConfigurationView: View {
     
     var body: some View {
         Form {
-            Section {
-                TextField("Player name", text: $configuration.hostUser)
-            } header: {
-                Text("Host Name")
-            }
-            
             Section {
                 Picker("No. of Questions", selection: $configuration.totalQuestions) {
                     ForEach(Array(questionLimitRange), id: \.self) { limit in
@@ -52,9 +46,12 @@ struct QuizConfigurationView: View {
             .buttonStyle(.borderedProminent)
             .disabled(configuration.hostUser.isEmpty)
         }
+        .navigationTitle("Configure Quiz")
     }
 }
 
 #Preview {
-    QuizConfigurationView(configuration: QuizConfiguration(hostUser: "James"))
+    NavigationStack {
+        QuizConfigurationView(configuration: .constant(QuizConfiguration(hostUser: "James")))
+    }
 }
