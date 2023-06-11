@@ -9,6 +9,8 @@ import Foundation
 import GroupActivities
 
 struct PlayTogether: GroupActivity {
+    var configuration: QuizConfiguration
+    
     var metadata: GroupActivityMetadata {
         var metadata = GroupActivityMetadata()
         metadata.title = "Share Play"

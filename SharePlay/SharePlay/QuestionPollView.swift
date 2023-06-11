@@ -57,6 +57,7 @@ struct QuestionPollView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top)
             }
+            .sensoryFeedback(.selection, trigger: selectedOption)
         }
         .safeAreaInset(edge: .bottom, content: {
             Button {
@@ -83,5 +84,5 @@ struct QuestionPollView: View {
             .init(title: "Compiler Flag"),
             .init(title: "Attribute"),
         ],
-        correct: 1))
+        user: "John Appleseed"))
 }

@@ -63,7 +63,7 @@ private extension ContentView {
     func activateSession() {
         Task {
             do {
-                _ = try await PlayTogether().activate()
+                _ = try await PlayTogether(configuration: QuizConfiguration()).activate()
             } catch {
                 logger.log("Failed to activate SharePlay: \(error)")
             }
@@ -73,6 +73,7 @@ private extension ContentView {
     func joinSession() {
         Task {
             for await session in PlayTogether.sessions() {
+                print(session.activity.configuration)
                 session.join()
                 model.messenger = GroupSessionMessenger(session: session, deliveryMode: .reliable)
                 for await (message, context) in model.messenger!.messages(of: GameMessage.self) {

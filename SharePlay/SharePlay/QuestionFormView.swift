@@ -8,40 +8,17 @@
 import SwiftUI
 import Observation
 
-@Observable
-public class Question {
-    public var title: String = ""
-    public var options: [Option] = []
-    public var correctOption: Option? = nil
-    
-    public init(title: String) {
-        self.title = title
-        self.options = [.init(title: "")]
-        self.correctOption = options[0]
-    }
-    
-    public init(title: String, options: [Option], correct index: Int) {
-        self.title = title
-        self.options = options
-        self.correctOption = options[index]
-    }
-}
-
-public struct Option: Identifiable, Equatable {
-    public let id: UUID
-    public var title: String
-    
-    init(title: String) {
-        self.id = .init()
-        self.title = title
-    }
-}
-
 struct QuestionForm: View {
-    @Bindable var question: Question
+    @State var question: Question
     
     var body: some View {
         Form {
+            Section {
+                TextField("User name", text: $question.user)
+            } header: {
+                Text("User Name")
+            }
+            
             Section {
                 TextField("Question", text: $question.title, axis: .vertical)
                     .lineLimit(10)
@@ -90,10 +67,11 @@ struct QuestionForm: View {
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .padding(.horizontal)
+            .disabled(!question.isValid)
         }
     }
 }
 
 #Preview {
-    QuestionForm(question: Question(title: ""))
+    QuestionForm(question: Question(title: "", options: [.init(title: "")], user: "John Appleseed"))
 }
